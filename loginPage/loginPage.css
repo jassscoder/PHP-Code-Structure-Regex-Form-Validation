@@ -1,0 +1,208 @@
+:root {
+	--text: #26321f;
+	--muted: #53604c;
+	--border: rgba(75, 91, 54, 0.45);
+	--green: #4d8b35;
+	--green-dark: #376c28;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: var(--text);
+	font-family: Arial, sans-serif;
+	background: #f4f4f4 url('../assets/mcwebbg.jpg') center / cover no-repeat;
+}
+
+.login-shell {
+	position: relative;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	padding: 20px;
+}
+
+.login-card {
+	width: min(100%, 440px);
+	padding: 30px;
+	background: rgba(245, 241, 211, 0.72);
+	border: 2px solid rgba(92, 72, 39, 0.6);
+	border-radius: 6px;
+	box-shadow: 0 8px 24px rgba(29, 52, 22, 0.3);
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+}
+
+.eyebrow {
+	margin: 0 0 8px;
+	color: var(--muted);
+	font-size: 14px;
+}
+
+h1 {
+	margin: 0;
+	font-size: 28px;
+}
+
+.intro {
+	margin: 10px 0 28px;
+	color: var(--muted);
+	font-size: 14px;
+}
+
+.login-form {
+	display: grid;
+	gap: 18px;
+}
+
+.field {
+	display: grid;
+	gap: 8px;
+}
+
+label,
+.label-row {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.label-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+a {
+	color: var(--green-dark);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'] {
+	width: 100%;
+	padding: 11px;
+	color: var(--text);
+	font: inherit;
+	background: rgba(255, 255, 255, 0.68);
+	border: 1px solid var(--border);
+	border-radius: 4px;
+	outline: none;
+}
+
+input::placeholder {
+	color: #9ba7a1;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus {
+	border-color: var(--green);
+}
+
+input.error {
+	border-color: #b73232;
+}
+
+input.valid {
+	border-color: var(--green);
+}
+
+label.error {
+	color: #b73232;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.remember-me {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	color: var(--muted);
+	font-weight: normal;
+}
+
+.remember-me input {
+	width: 16px;
+	height: 16px;
+	accent-color: var(--green);
+}
+
+button {
+	padding: 12px;
+	color: #fff;
+	font: inherit;
+	font-weight: bold;
+	background: var(--green);
+	border: 0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button:hover {
+	background: var(--green-dark);
+}
+
+button:focus-visible,
+a:focus-visible {
+	outline: 2px solid var(--green);
+	outline-offset: 3px;
+}
+
+.register-details {
+	margin-top: 24px;
+	color: var(--muted);
+	font-size: 14px;
+}
+
+
+.register-details summary {
+	color: var(--green-dark);
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+
+.register-details summary:hover {
+	text-decoration: underline;
+}
+
+.register-details summary:focus-visible {
+	outline: 2px solid var(--green);
+	outline-offset: 3px;
+}
+
+.register-details h2 {
+	margin: 22px 0 0;
+	color: var(--text);
+	font-size: 24px;
+}
+
+.register-form {
+	display: grid;
+	gap: 18px;
+	margin-top: 18px;
+}
+
+.success-message {
+	margin: 0;
+	color: var(--green-dark);
+	font-size: 13px;
+}
+
+.login-card:has(.register-details[open]) > h1,
+.login-card:has(.register-details[open]) > .intro {
+	display: none;
+}
+
+.login-card:has(.register-details[open]) > .login-form {
+	display: none;
+}
